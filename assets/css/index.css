@@ -143,7 +143,7 @@ a { text-decoration: none; color: inherit; transition: var(--transition-base); }
 
 /* On Blog and Subpages, we might want the Teal Brand color instead of Navy for the split */
 body:not(.home-page) .site-header {
-     background: linear-gradient(to right, var(--color-accent) 0, var(--color-accent) 32%, var(--color-white) 32%, var(--color-white) 100%) !important;
+     background: linear-gradient(to right, var(--color-accent) 0, var(--color-accent) 30%, var(--color-white) 30%, var(--color-white) 100%) !important;
 }
 
 .site-header.scrolled .nav-menu a { color: var(--color-gray-800); }
