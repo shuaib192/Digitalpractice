@@ -9,6 +9,7 @@ $services = $pdo->query('SELECT * FROM services WHERE is_active = 1 ORDER BY sor
 
 // Page settings
 $page_title = "Powering Africa's Digital Future";
+$body_class = 'home-page';
 include __DIR__ . '/includes/header.php';
 ?>
 

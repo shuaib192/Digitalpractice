@@ -35,7 +35,7 @@ require_once __DIR__ . '/functions.php';
     <!-- Styles -->
     <link rel="stylesheet" href="<?php echo CSS_PATH; ?>/index.css?v=<?php echo ASSET_VERSION; ?>">
 </head>
-<body>
+<body class="<?php echo isset($body_class) ? $body_class : ''; ?>">
 
 <!-- Custom Cursor -->
 <div class="custom-cursor" id="custom-cursor"></div>
