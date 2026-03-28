@@ -1,0 +1,16 @@
+# Digital Practice Robots Exclusion File
+# Optimized for Googlebot and SEO
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /includes/
+
+# Exclude Administration and Temporary files
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /includes/db.php
+Disallow: /includes/config.php
+
+# Sitemap reference (Replace with your actual domain when hosting)
+Sitemap: http://localhost/Digitalpractice/sitemap.php

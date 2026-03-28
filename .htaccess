@@ -1,0 +1,47 @@
+RewriteEngine On
+RewriteBase /Digitalpractice/
+
+# Dynamic Service Pages Routing
+RewriteRule ^services/([a-zA-Z0-9-]+)/?$ service-details.php?slug=$1 [L,QSA]
+
+# Dynamic Insight/Blog Pages Routing
+RewriteRule ^insights/([a-zA-Z0-9-]+)/?$ insight-details.php?slug=$1 [L,QSA]
+
+# Dynamic Case Study Pages Routing
+RewriteRule ^case-studies/([a-zA-Z0-9-]+)/?$ case-study-details.php?slug=$1 [L,QSA]
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]
+
+# Redirect .php URLs to clean URLs
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Block directory listing
+Options -Indexes
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# GZIP Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>

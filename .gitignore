@@ -1,0 +1,6 @@
+includes/db.php
+includes/config.php
+tmp/
+.DS_Store
+*.log
+node_modules/
