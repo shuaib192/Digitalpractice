@@ -13,32 +13,29 @@ $body_class = 'home-page';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<!-- High-Impact Hero Section (Heirs-Inspired Scattered Typography) -->
+<!-- High-Impact Hero Section (Total Brand Morph Engine) -->
 <section class="hero" id="hero">
-    <!-- Scattered Decorative Letters — positioned individually like Heirs Technologies -->
-    <div class="hero-letters-grid">
-        <span class="hero-letter">C</span>
-        <span class="hero-letter">RE</span>
-        <span class="hero-letter">A</span>
-        <span class="hero-letter">T</span>
-        <span class="hero-letter">E</span>
-    </div>
+    <!-- Morphing Letter Grid — Handled by JavaScript Engine -->
+    <div class="hero-letters-grid" id="morph-bg"></div>
     
     <div class="hero-overlay"></div>
     
     <!-- Background Image -->
     <div style="position: absolute; inset: 0; z-index: 1;">
         <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=2000" 
-             alt="Digital Workspace" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35;">
+             alt="Architectural Excellence" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35;">
     </div>
     
     <div class="container hero-content">
-        <h1 class="hero-title animate-on-scroll">Turning Digital<br>Potential into<br>Performance.</h1>
-        <p class="hero-subtitle animate-on-scroll" style="transition-delay: 150ms; margin-bottom: 3rem; max-width: 550px;">
-            Resolving all forms of digital skilling, market access, and branding challenges through world-class, industry-standard services.
+        <h1 class="hero-title">
+            Turning Digital<br>Potential into<br>
+            <span class="hero-morph-word" id="morph-term">PERFORMANCE</span>.
+        </h1>
+        <p class="hero-subtitle">
+            Resolving digital skilling, market access, and branding challenges through world-class, industry-standard services.
         </p>
 
-        <a href="<?php echo SITE_URL; ?>/services" class="learn-more-link cursor-trigger animate-on-scroll" style="transition-delay: 350ms;">
+        <a href="<?php echo SITE_URL; ?>/services" class="learn-more-link cursor-trigger">
             Learn More 
             <div class="arrow-circle">
                 <i class="fas fa-arrow-right"></i>
@@ -46,6 +43,69 @@ include __DIR__ . '/includes/header.php';
         </a>
     </div>
 </section>
+
+<script>
+/**
+ * Total Brand Morph Engine - High Performance Version
+ */
+const morphData = [
+    { word: 'ALIGN',       term: 'ALIGNMENT' },
+    { word: 'INNOVATE',    term: 'INNOVATION' },
+    { word: 'ACQUIRE',     term: 'ACQUISITION' },
+    { word: 'IMPACT',      term: 'IMPACT' },
+    { word: 'SCALE',       term: 'SCALABILITY' },
+    { word: 'PERFORM',     term: 'PERFORMANCE' }
+];
+
+let currentIndex = 0;
+const bgContainer = document.getElementById('morph-bg');
+const termContainer = document.getElementById('morph-term');
+
+function morph() {
+    const data = morphData[currentIndex];
+    
+    // 1. Morph Background Letters
+    bgContainer.innerHTML = '';
+    const letters = data.word.split('');
+    
+    letters.forEach((char, i) => {
+        const span = document.createElement('span');
+        span.className = 'hero-letter';
+        span.textContent = char;
+        
+        // Asymmetrical Positioning Logic (Inspired by Heirs Technologies)
+        const vSize = 25 + Math.random() * 15;
+        const top = -10 + (i * 15) + (Math.random() * 10);
+        const left = (i % 2 === 0) ? (5 + Math.random() * 15) : (50 + Math.random() * 25);
+        
+        span.style.fontSize = `${vSize}vw`;
+        span.style.top = `${top}%`;
+        span.style.left = `${left}%`;
+        
+        bgContainer.appendChild(span);
+        
+        // Trigger Entrance
+        setTimeout(() => span.classList.add('active'), 50 * i);
+    });
+    
+    // 2. Morph Headline Term
+    termContainer.style.opacity = '0';
+    termContainer.style.transform = 'translateY(10px)';
+    
+    setTimeout(() => {
+        termContainer.textContent = data.term;
+        termContainer.style.opacity = '1';
+        termContainer.style.transform = 'translateY(0)';
+    }, 500);
+
+    // 3. Cycle logic
+    currentIndex = (currentIndex + 1) % morphData.length;
+}
+
+// Initial Launch
+morph();
+setInterval(morph, 4000);
+</script>
 
 <!-- Our Capabilities Section (Corporate Border-Share Grid) -->
 <section class="section">
