@@ -1,5 +1,9 @@
 RewriteEngine On
-RewriteBase /Digitalpractice/
+RewriteBase /
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Dynamic Service Pages Routing
 RewriteRule ^services/([a-zA-Z0-9-]+)/?$ service-details.php?slug=$1 [L,QSA]
