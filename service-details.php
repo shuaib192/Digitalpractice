@@ -1,26 +1,42 @@
 <?php
 /**
- * Digital Practice - Service Details Template (Dynamic Route)
+ * Digital Practice - Service Details Template (Dynamic Brand Integration)
  */
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 
-$slug = $_GET['slug'] ?? '';
-if (empty($slug)) {
-    header("Location: " . SITE_URL . "/services");
-    exit;
+$service_id = $_GET['id'] ?? '';
+$service_slug = $_GET['slug'] ?? '';
+$service = null;
+
+// 1. Check Brand Registry (Source of Truth)
+if (!empty($service_id)) {
+    foreach ($BRAND_SERVICES as $bs) {
+        if ($bs['id'] === $service_id) {
+            $service = [
+                'title' => $bs['title'],
+                'icon' => $bs['icon'],
+                'short_desc' => $bs['summary'],
+                'full_desc' => $bs['description']
+            ];
+            break;
+        }
+    }
 }
 
-$stmt = $pdo->prepare("SELECT * FROM services WHERE slug = ? AND is_active = 1 LIMIT 1");
-$stmt->execute([$slug]);
-$service = $stmt->fetch();
+// 2. Tactical Fallback: Database
+if (!$service && (!empty($service_id) || !empty($service_slug))) {
+    $stmt = $pdo->prepare("SELECT * FROM services WHERE (id = ? OR slug = ?) AND is_active = 1 LIMIT 1");
+    $stmt->execute([$service_id, $service_slug]);
+    $service = $stmt->fetch();
+}
 
 if (!$service) {
     header("HTTP/1.0 404 Not Found");
-    die("<div style='text-align:center; padding: 100px; font-family: sans-serif;'><h1>404 - Service Not Found</h1><p>The requested service could not be found.</p><a href='" . SITE_URL . "'>Return Home</a></div>");
+    die("<div style='text-align:center; padding: 100px; font-family: var(--font-body);'><h1>404 - Solution Not Found</h1><p>The requested digital capability could not be identified in our registry.</p><a href='" . SITE_URL . "/services'>Return to Solutions</a></div>");
 }
 
-$page_title = sanitize($service['title']);
+$page_title = $service['title'];
 include __DIR__ . '/includes/header.php';
 ?>
 

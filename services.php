@@ -56,21 +56,26 @@ include __DIR__ . '/includes/header.php';
 <section class="section">
     <div class="container">
         <div class="grid-3" style="gap: 0; border: 1px solid var(--color-gray-100);">
-            <?php foreach ($services as $service): ?>
+            <?php foreach ($BRAND_SERVICES as $service): ?>
             <div class="service-card card-360 animate-on-scroll" style="height: 100%; position: relative;">
                 <div style="margin-bottom: 2rem;">
-                    <i class="<?php echo sanitize($service['icon']); ?>" style="font-size: 2.5rem; color: var(--color-accent);"></i>
+                    <i class="fas <?php echo $service['icon']; ?>" style="font-size: 2.5rem; color: var(--color-accent);"></i>
                 </div>
                 <h3 style="font-size: 1.5rem; font-family: var(--font-heading); font-weight: 800; color: var(--color-primary); margin-bottom: 1rem;">
-                    <?php echo sanitize($service['title']); ?>
+                    <?php echo $service['title']; ?>
                 </h3>
                 <p style="color: var(--color-gray-600); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
-                    <?php echo sanitize($service['short_desc']); ?>
+                    <?php echo $service['summary']; ?>
                 </p>
                 
-                <a href="<?php echo SITE_URL; ?>/services/<?php echo sanitize($service['slug']); ?>" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: var(--color-primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; margin-top: auto;">
-                    Explore specialized solution <i class="fas fa-arrow-right" style="color: var(--color-accent);"></i>
-                </a>
+                <div style="margin-top: auto;">
+                    <p style="font-size: 0.9rem; color: var(--color-gray-500); line-height: 1.6; margin-bottom: 1.5rem;">
+                        <?php echo truncateText($service['description'], 150); ?>
+                    </p>
+                    <a href="<?php echo SITE_URL; ?>/service-details.php?id=<?php echo $service['id']; ?>" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 700; color: var(--color-primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">
+                        Explore specialized solution <i class="fas fa-arrow-right" style="color: var(--color-accent);"></i>
+                    </a>
+                </div>
             </div>
             <?php endforeach; ?>
         </div>

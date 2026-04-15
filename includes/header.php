@@ -75,13 +75,9 @@ if (isset($pdo)) {
                 <a href="<?php echo SITE_URL; ?>/services" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.75rem;margin-left:4px;"></i></a>
                 <div class="mega-dropdown">
                     <ul class="mega-list">
-                        <?php foreach($header_services as $hs): ?>
-                            <li><a href="<?php echo SITE_URL; ?>/services/<?php echo $hs['slug']; ?>"><?php echo htmlspecialchars($hs['title']); ?></a></li>
+                        <?php foreach($BRAND_SERVICES as $bs): ?>
+                            <li><a href="<?php echo SITE_URL; ?>/service-details.php?id=<?php echo $bs['id']; ?>"><?php echo $bs['title']; ?></a></li>
                         <?php endforeach; ?>
-                        <?php if(empty($header_services)): ?>
-                            <li><a href="#">Business Transformation</a></li>
-                            <li><a href="#">Data & AI</a></li>
-                        <?php endif; ?>
                     </ul>
                 </div>
             </div>

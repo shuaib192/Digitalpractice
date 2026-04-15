@@ -16,19 +16,20 @@ include __DIR__ . '/includes/header.php';
 <!-- High-Impact Hero Section -->
 <section class="hero" id="hero">
     <!-- Large Background Decorative Letters (Premium Depth) -->
-    <div class="hero-letters">CREATE</div>
+    <div class="hero-letters"><?php echo strtoupper(BRAND_SHORT_NAME); ?></div>
     
     <div class="hero-overlay"></div>
     
-    <!-- Background Image placeholder or high-quality Unsplash -->
     <div style="position: absolute; inset: 0; z-index: 1;">
-        <img src="https://images.unsplash.com/photo-1573161158301-ba085d0d871b?auto=format&fit=crop&q=80&w=2000" 
-             alt="Tech Office" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.2;">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000" 
+             alt="Digital Future" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.15;">
     </div>
     
     <div class="container hero-content">
-        <h1 class="hero-title animate-on-scroll">Architecting the <br>Digital Future of <br>African Enterprise.</h1>
-        <p class="hero-subtitle animate-on-scroll" style="transition-delay: 150ms; margin-bottom: 3rem;">We deliver world-class product engineering, strategic consulting, and robust managed services to accelerate your digital maturity.</p>
+        <h1 class="hero-title animate-on-scroll">Enable. Build. <br>Scale the Future.</h1>
+        <p class="hero-subtitle animate-on-scroll" style="transition-delay: 150ms; margin-bottom: 3rem;">
+            <?php echo BRAND_ABOUT_SHORT; ?>
+        </p>
         
         <!-- Global Discovery Interface -->
         <div class="animate-on-scroll" style="transition-delay: 200ms; max-width: 650px; margin-bottom: 4rem;">
@@ -51,18 +52,18 @@ include __DIR__ . '/includes/header.php';
 <section class="section">
     <div class="container">
         <div class="section-header animate-on-scroll">
-            <span class="section-label">Our Divisions</span>
+            <span class="section-label">Our Capabilities</span>
             <h2 class="title-bold">Specialized Solutions <br>for Modern Enterprise.</h2>
         </div>
 
         <div class="divisions-grid">
-            <?php foreach ($services as $service): ?>
+            <?php foreach ($BRAND_SERVICES as $service): ?>
             <div class="service-card card-360 animate-on-scroll cursor-trigger">
                 <div class="service-icon">
-                    <i class="<?php echo sanitize($service['icon']); ?>"></i>
+                    <i class="fas <?php echo $service['icon']; ?>"></i>
                 </div>
-                <h3><?php echo sanitize($service['title']); ?></h3>
-                <p><?php echo sanitize($service['short_desc']); ?></p>
+                <h3><?php echo $service['title']; ?></h3>
+                <p><?php echo $service['summary']; ?></p>
                 <div style="margin-top: 2rem; border-bottom: 3px solid var(--color-accent); width: 40px;"></div>
             </div>
             <?php endforeach; ?>
@@ -75,28 +76,48 @@ include __DIR__ . '/includes/header.php';
     <div class="container">
         <div class="grid-2" style="gap: var(--space-lg);">
             <div class="animate-on-scroll">
-                <span class="section-label">Our Core Focus</span>
-                <h2 class="title-bold" style="margin-bottom: 2rem; font-size: 3.2rem;">Digital Products & <br>Strategic Consulting.</h2>
+                <span class="section-label">Our Philosophy</span>
+                <h2 class="title-bold" style="margin-bottom: 2rem; font-size: 3.2rem;">Impact Over <br>Activity.</h2>
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-gray-600); margin-bottom: 2.5rem;">
-                    We design, build, and scale enterprise-grade digital products tailored to your needs, while delivering the strategic consulting required to modernize your digital infrastructure and accelerate business performance.
+                    <?php echo BRAND_ABOUT_FULL; ?>
                 </p>
-                <a href="<?php echo SITE_URL; ?>/about" class="btn btn-primary">Discover Our Approach</a>
+                <a href="<?php echo SITE_URL; ?>/about" class="btn btn-primary">Discover ALIGN Values</a>
             </div>
             <div class="animate-on-scroll" style="position: relative;">
-                <div style="width: 100%; height: 500px; background-color: var(--color-primary); position: relative; overflow: hidden;">
+                <div style="width: 100%; height: 600px; background-color: var(--color-primary); position: relative; overflow: hidden;">
                     <!-- Highlight Image -->
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000" 
-                         alt="Collaboration" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" 
+                         alt="Team Collaboration" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
                     
                     <div style="position: absolute; inset: 0; background: rgba(15, 23, 42, 0.4);"></div>
                 </div>
                 
                 <!-- Info Square with NO Radius -->
-                <div style="position: absolute; bottom: -30px; left: -30px; padding: 2.5rem; background-color: var(--color-accent); color: white; width: 250px;">
-                    <div style="font-size: 3rem; font-weight: 900; margin-bottom: 0.5rem;" data-count="15" data-suffix="+">0</div>
-                    <div style="font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Years Experience</div>
+                <div style="position: absolute; bottom: -30px; left: -30px; padding: 2.5rem; background-color: var(--color-accent); color: white; width: 280px;">
+                    <div style="font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1rem;">Our Promise</div>
+                    <div style="font-size: 1.1rem; font-weight: 500; line-height: 1.4;">Access fairly. Build skills. Deliver impact. Grow responsibly.</div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Global Subsidiaries (Premium Grid) -->
+<section class="section" style="border-top: 1px solid var(--color-gray-100);">
+    <div class="container">
+        <div class="section-header animate-on-scroll text-center" style="margin-bottom: 4rem;">
+            <span class="section-label">Strategic Ecosystem</span>
+            <h2 class="title-bold">Our Subsidiaries</h2>
+        </div>
+        
+        <div class="grid-3" style="gap: 2rem;">
+            <?php foreach ($BRAND_SUBSIDIARIES as $sub): ?>
+            <a href="<?php echo $sub['url']; ?>" target="_blank" class="animate-on-scroll" style="display: block; padding: 3rem; background: var(--color-white); border: 1px solid var(--color-gray-100); transition: all 0.3s ease-in-out; text-decoration: none;">
+                <h3 style="font-size: 1.4rem; color: var(--color-primary); margin-bottom: 1rem;"><?php echo $sub['name']; ?></h3>
+                <p style="color: var(--color-gray-500); font-size: 0.95rem; margin-bottom: 2rem;"><?php echo $sub['description']; ?></p>
+                <span style="color: var(--color-accent); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px;">Visit Platform <i class="fas fa-external-link-alt" style="margin-left: 5px; font-size: 0.6rem;"></i></span>
+            </a>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -118,8 +139,8 @@ include __DIR__ . '/includes/header.php';
                 <div style="font-weight: 700; opacity: 0.6; text-transform: uppercase; font-size: 0.75rem; margin-top: 1rem; letter-spacing: 2px;">African Regions</div>
             </div>
             <div class="animate-on-scroll" style="transition-delay: 300ms;">
-                <div style="font-size: 3.5rem; font-weight: 900; color: var(--color-accent);" data-count="500" data-suffix="+">0</div>
-                <div style="font-weight: 700; opacity: 0.6; text-transform: uppercase; font-size: 0.75rem; margin-top: 1rem; letter-spacing: 2px;">Hours Support</div>
+                <div style="font-size: 3.5rem; font-weight: 900; color: var(--color-accent);" data-count="24" data-suffix="/7">0</div>
+                <div style="font-weight: 700; opacity: 0.6; text-transform: uppercase; font-size: 0.75rem; margin-top: 1rem; letter-spacing: 2px;">Elite Support</div>
             </div>
         </div>
     </div>
@@ -128,8 +149,8 @@ include __DIR__ . '/includes/header.php';
 <!-- Call to Action (Bold & Direct) -->
 <section class="section" style="border-top: 1px solid var(--color-gray-100);">
     <div class="container animate-on-scroll text-center" style="max-width: 800px;">
-        <span class="section-label">Ready to Begin?</span>
-        <h2 class="title-bold" style="margin-bottom: 3rem; font-size: 3.5rem;">Let's build the digital future together.</h2>
+        <span class="section-label">Strategic Partnership</span>
+        <h2 class="title-bold" style="margin-bottom: 3rem; font-size: 3.5rem;">Ready to build the digital future?</h2>
         <a href="<?php echo SITE_URL; ?>/contact" class="btn btn-primary btn-lg">Partner With Us</a>
     </div>
 </section>

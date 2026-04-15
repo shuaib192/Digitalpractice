@@ -51,21 +51,15 @@ include __DIR__ . '/includes/header.php';
         <div class="grid-2" style="align-items: start;">
             <div class="animate-on-scroll">
                 <span class="section-label" style="margin-bottom: 1rem; color: var(--color-accent); font-weight: 700; letter-spacing: 2px;">OUR MANDATE</span>
-                <h2 class="title-bold" style="font-size: 2.7rem; color: var(--color-primary); margin-bottom: 2rem;">Digital Products. <br>Strategic Consulting.</h2>
+                <h2 class="title-bold" style="font-size: 2.7rem; color: var(--color-primary); margin-bottom: 2rem;">Bridge the Gap. <br>Equip for Impact.</h2>
                 <div style="font-size: 1.1rem; line-height: 1.9; color: var(--color-gray-600); display: flex; flex-direction: column; gap: 1.5rem;">
-                    <p>Digital Practice is engineered to elevate the standard of African enterprise systems. We bridge the gap between complex infrastructure challenges and scalable, elegant solutions through proprietary digital products and expert consulting.</p>
-                    <p>Our focus is dual-tracked: We build bespoke, high-performance software products that solve specific industry pain points while providing the high-level technical consulting required to guide businesses through total digital transformation.</p>
-                    <p>Our teams operate across key African tech hubs, ensuring that our solutions are not only globally standard but locally relevant and accessible to the organizations that need them most.</p>
+                    <p><?php echo nl2br(BRAND_ABOUT_FULL); ?></p>
                 </div>
                 
                 <div style="margin-top: 3rem; display: flex; gap: 3rem; border-top: 1px solid var(--color-gray-200); padding-top: 2rem;">
                     <div>
-                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent);">15+</div>
-                        <div style="text-transform: uppercase; font-size: 0.8rem; font-weight: 700; color: var(--color-gray-500); letter-spacing: 1px;">Years Operation</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent);">12</div>
-                        <div style="text-transform: uppercase; font-size: 0.8rem; font-weight: 700; color: var(--color-gray-500); letter-spacing: 1px;">African Markets</div>
+                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent);">MISSION</div>
+                        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-gray-600); max-width: 400px;"><?php echo BRAND_MISSION; ?></p>
                     </div>
                 </div>
             </div>
@@ -73,13 +67,13 @@ include __DIR__ . '/includes/header.php';
             <div class="animate-on-scroll" style="position: relative; height: 100%;">
                 <div style="background-color: var(--color-gray-100); height: 100%; min-height: 500px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
                     <!-- Official CEO Portrait -->
-                    <img src="<?php echo SITE_URL; ?>/assets/images/team/ceo.png" alt="CEO - Digital Practice" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
+                    <img src="<?php echo SITE_URL; ?>/assets/images/team/ceo.png" alt="Digital Practice Vision" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; inset: 0; background: rgba(15, 23, 42, 0.2);"></div>
                 </div>
                 <!-- Accent Block (Sharp) -->
-                <div style="position: absolute; bottom: 0; left: -2rem; background: var(--color-accent); color: white; padding: 2.5rem; max-width: 300px;">
+                <div style="position: absolute; bottom: 0; left: -2rem; background: var(--color-accent); color: white; padding: 2.5rem; max-width: 400px; z-index: 5;">
                     <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Our Vision</h3>
-                    <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6;">To be the definitive technology partner for Africa's most ambitious organizations.</p>
+                    <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6;"><?php echo BRAND_VISION; ?></p>
                 </div>
             </div>
         </div>
@@ -89,26 +83,26 @@ include __DIR__ . '/includes/header.php';
 <!-- Values Section (Data-driven, precise) -->
 <section class="section bg-light" style="background-color: var(--color-gray-50); border-top: 1px solid var(--color-gray-200); border-bottom: 1px solid var(--color-gray-200);">
     <div class="container">
-        <div class="text-center animate-on-scroll" style="margin-bottom: 4rem;">
-            <h2 class="title-bold" style="font-size: 2.5rem;">Core Principles</h2>
+        <div class="text-center animate-on-scroll" style="margin-bottom: 5rem;">
+            <span class="section-label" style="color: var(--color-accent);">THE ALIGN FRAMEWORK</span>
+            <h2 class="title-bold" style="font-size: 2.5rem;">Our Core Values</h2>
+            <p style="color: var(--color-gray-500); margin-top: 1rem;"><?php echo BRAND_VALUES_SUMMARY; ?></p>
         </div>
         
-        <div class="grid-3" style="gap: 0; border: 1px solid var(--color-gray-200);">
-            <div style="padding: 3rem; background: white; border-right: 1px solid var(--color-gray-200); border-bottom: 1px solid var(--color-gray-200);">
-                <i class="fas fa-bullseye" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 1.5rem;"></i>
-                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Precision</h3>
-                <p style="color: var(--color-gray-600); line-height: 1.7;">We execute with exacting standards, ensuring every solution is architected for maximum reliability and scale.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <?php foreach ($BRAND_VALUES as $value): ?>
+            <div class="animate-on-scroll" style="padding: 3.5rem; background: white; border: 1px solid var(--color-gray-200); transition: all 0.3s ease;">
+                <div style="font-size: 3rem; font-weight: 900; color: var(--color-accent); opacity: 0.2; line-height: 1; margin-bottom: 1.5rem;"><?php echo $value['letter']; ?></div>
+                <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary); margin-bottom: 1rem;"><?php echo $value['title']; ?></h3>
+                <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--color-accent); margin-bottom: 1.5rem;"><?php echo $value['tagline']; ?></div>
+                <p style="color: var(--color-gray-600); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    <?php echo $value['short']; ?>
+                </p>
+                <div style="padding-top: 1.5rem; border-top: 1px solid var(--color-gray-100); font-style: italic; font-size: 0.85rem; color: var(--color-gray-400);">
+                    "<?php echo $value['policy']; ?>"
+                </div>
             </div>
-            <div style="padding: 3rem; background: white; border-right: 1px solid var(--color-gray-200); border-bottom: 1px solid var(--color-gray-200);">
-                <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 1.5rem;"></i>
-                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Performance</h3>
-                <p style="color: var(--color-gray-600); line-height: 1.7;">Our metrics for success are directly tied to the measurable business outcomes we generate for our partners.</p>
-            </div>
-            <div style="padding: 3rem; background: white; border-bottom: 1px solid var(--color-gray-200);">
-                <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 1.5rem;"></i>
-                <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Integrity</h3>
-                <p style="color: var(--color-gray-600); line-height: 1.7;">Enterprise trust is built on transparency and security. We safeguard your data as strictly as our own.</p>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

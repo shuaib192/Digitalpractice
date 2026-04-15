@@ -2,6 +2,7 @@
 /**
  * Digital Practice - Helper Functions
  */
+require_once __DIR__ . '/brand.php';
 
 /**
  * Sanitize user input
