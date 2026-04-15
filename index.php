@@ -46,10 +46,9 @@ include __DIR__ . '/includes/header.php';
 
 <script>
 /**
- * Total Brand Morph Engine - High Performance Version
+ * Total Brand Morph Engine - Refined Architectural Version
  */
 const morphData = [
-    { word: 'ALIGN',       term: 'ALIGNMENT' },
     { word: 'INNOVATE',    term: 'INNOVATION' },
     { word: 'ACQUIRE',     term: 'ACQUISITION' },
     { word: 'IMPACT',      term: 'IMPACT' },
@@ -64,28 +63,47 @@ const termContainer = document.getElementById('morph-term');
 function morph() {
     const data = morphData[currentIndex];
     
-    // 1. Morph Background Letters
+    // 1. Morph Background Letters (Clean Grid Placement to avoid Overlap)
     bgContainer.innerHTML = '';
     const letters = data.word.split('');
     
+    // Define safe regions to prevent overlap
+    // Dividing screen into balanced quadrants
+    const regions = [
+        { top: 5,   left: 5 },   // Top Left
+        { top: 5,   left: 65 },  // Top Right
+        { top: 40,  left: 35 },  // Mid Center
+        { top: 70,  left: 5 },   // Bottom Left
+        { top: 70,  left: 65 },  // Bottom Right
+        { top: 25,  left: 10 },  // Mid-High Left
+        { top: 25,  left: 70 },  // Mid-High Right
+        { top: 55,  left: 50 },  // Mid-Low Center
+        { top: 10,  left: 35 }   // Top Center
+    ];
+
     letters.forEach((char, i) => {
         const span = document.createElement('span');
         span.className = 'hero-letter';
         span.textContent = char;
         
-        // Asymmetrical Positioning Logic (Inspired by Heirs Technologies)
-        const vSize = 25 + Math.random() * 15;
-        const top = -10 + (i * 15) + (Math.random() * 10);
-        const left = (i % 2 === 0) ? (5 + Math.random() * 15) : (50 + Math.random() * 25);
+        // Pick a region based on index, loop if word is longer than defined regions
+        const region = regions[i % regions.length];
+        
+        // Slightly reduced sizes for better fit (18-28vw)
+        const vSize = 18 + (i % 3) * 5; 
+        
+        // Apply jitter within the safe region
+        const topPos = region.top + (Math.random() * 5);
+        const leftPos = region.left + (Math.random() * 5);
         
         span.style.fontSize = `${vSize}vw`;
-        span.style.top = `${top}%`;
-        span.style.left = `${left}%`;
+        span.style.top = `${topPos}%`;
+        span.style.left = `${leftPos}%`;
         
         bgContainer.appendChild(span);
         
         // Trigger Entrance
-        setTimeout(() => span.classList.add('active'), 50 * i);
+        setTimeout(() => span.classList.add('active'), 100 * i);
     });
     
     // 2. Morph Headline Term
