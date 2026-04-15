@@ -13,34 +13,33 @@ $body_class = 'home-page';
 include __DIR__ . '/includes/header.php';
 ?>
 
-<!-- High-Impact Hero Section -->
+<!-- High-Impact Hero Section (Heirs-Inspired Scattered Typography) -->
 <section class="hero" id="hero">
-    <!-- Large Background Decorative Letters (Premium Depth) -->
-    <div class="hero-letters"><?php echo strtoupper(BRAND_SHORT_NAME); ?></div>
+    <!-- Scattered Decorative Letters — positioned individually like Heirs Technologies -->
+    <div class="hero-letters-grid">
+        <span class="hero-letter">C</span>
+        <span class="hero-letter">RE</span>
+        <span class="hero-letter">A</span>
+        <span class="hero-letter">T</span>
+        <span class="hero-letter">E</span>
+    </div>
     
     <div class="hero-overlay"></div>
     
+    <!-- Background Image -->
     <div style="position: absolute; inset: 0; z-index: 1;">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000" 
-             alt="Digital Future" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.15;">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=2000" 
+             alt="Digital Workspace" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35;">
     </div>
     
     <div class="container hero-content">
-        <h1 class="hero-title animate-on-scroll">Enable. Build. <br>Scale the Future.</h1>
-        <p class="hero-subtitle animate-on-scroll" style="transition-delay: 150ms; margin-bottom: 3rem;">
-            <?php echo BRAND_ABOUT_SHORT; ?>
+        <h1 class="hero-title animate-on-scroll">Turning Digital<br>Potential into<br>Performance.</h1>
+        <p class="hero-subtitle animate-on-scroll" style="transition-delay: 150ms; margin-bottom: 3rem; max-width: 550px;">
+            Resolving all forms of digital skilling, market access, and branding challenges through world-class, industry-standard services.
         </p>
-        
-        <!-- Global Discovery Interface -->
-        <div class="animate-on-scroll" style="transition-delay: 200ms; max-width: 650px; margin-bottom: 4rem;">
-            <form method="GET" action="blog.php" style="display: flex; background: white; padding: 5px; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
-                <input type="text" name="s" placeholder="Search Global Intelligence, Services, or Success Stories..." style="flex: 1; border: none; padding: 1.2rem 2rem; font-size: 1.1rem; outline: none; font-family: var(--font-body);">
-                <button type="submit" class="btn btn-primary" style="padding: 0 2.5rem; border: none; background: var(--color-primary); font-weight: 800; letter-spacing: 1px;">SEARCH</button>
-            </form>
-        </div>
 
         <a href="<?php echo SITE_URL; ?>/services" class="learn-more-link cursor-trigger animate-on-scroll" style="transition-delay: 350ms;">
-            Discover Solutions 
+            Learn More 
             <div class="arrow-circle">
                 <i class="fas fa-arrow-right"></i>
             </div>
@@ -48,7 +47,7 @@ include __DIR__ . '/includes/header.php';
     </div>
 </section>
 
-<!-- Our Divisions Section (Clean Grid-Based - Sharp Edges) -->
+<!-- Our Capabilities Section (Corporate Border-Share Grid) -->
 <section class="section">
     <div class="container">
         <div class="section-header animate-on-scroll">
@@ -58,13 +57,17 @@ include __DIR__ . '/includes/header.php';
 
         <div class="divisions-grid">
             <?php foreach ($BRAND_SERVICES as $service): ?>
-            <div class="service-card card-360 animate-on-scroll cursor-trigger">
+            <div class="service-card animate-on-scroll">
                 <div class="service-icon">
                     <i class="fas <?php echo $service['icon']; ?>"></i>
                 </div>
                 <h3><?php echo $service['title']; ?></h3>
                 <p><?php echo $service['summary']; ?></p>
-                <div style="margin-top: 2rem; border-bottom: 3px solid var(--color-accent); width: 40px;"></div>
+                <div style="margin-top: auto; padding-top: 2rem;">
+                    <a href="<?php echo SITE_URL; ?>/service-details.php?id=<?php echo $service['id']; ?>" style="display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--color-accent); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px;">
+                        Explore <i class="fas fa-arrow-right" style="font-size: 0.6rem;"></i>
+                    </a>
+                </div>
             </div>
             <?php endforeach; ?>
         </div>

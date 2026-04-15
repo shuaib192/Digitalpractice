@@ -313,39 +313,48 @@ body:not(.home-page) .site-header .nav-link {
 }
 
 
-/* --- New Hero (Heirs Inspired) --- */
+/* --- New Hero (Heirs Inspired — Scattered Letters) --- */
 .hero {
     position: relative;
     min-height: 100vh;
-    padding: 120px 0 100px;
+    padding: 0;
     background-color: var(--color-primary);
     display: flex;
     align-items: center;
     overflow: hidden;
 }
 
-/* Large decorative letters in background */
-.hero-letters {
+/* Scattered decorative letter blocks — Exact Heirs Positioning */
+.hero-letters-grid {
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-heading);
-    font-size: 50vw;
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.035);
-    line-height: 1;
-    letter-spacing: -2vw;
+    z-index: 3;
     pointer-events: none;
-    z-index: 1;
     user-select: none;
+    overflow: hidden;
 }
+
+.hero-letter {
+    position: absolute;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.15); /* Increased visibility */
+    line-height: 0.75;
+    letter-spacing: -0.05em;
+    filter: drop-shadow(0 0 30px rgba(0,0,0,0.1));
+}
+
+/* Individual positions synchronized with Heirs screenshot */
+.hero-letter:nth-child(1) { font-size: 35vw; top: -5%;  left: 5%; }  /* C */
+.hero-letter:nth-child(2) { font-size: 32vw; top: -8%;  right: 5%; }  /* RE */
+.hero-letter:nth-child(3) { font-size: 38vw; bottom: -5%; left: 3%; } /* A */
+.hero-letter:nth-child(4) { font-size: 34vw; bottom: -8%; left: 45%; } /* T */
+.hero-letter:nth-child(5) { font-size: 32vw; bottom: -5%; right: 2%; } /* E */
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15, 23, 42, 0.7); /* Solid solid overlay */
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8));
     z-index: 2;
 }
 
@@ -426,55 +435,95 @@ body:not(.home-page) .site-header .nav-link {
 }
 .title-bold { font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.02em; }
 
-/* --- Component Overhauls (No Gradients) --- */
+/* --- Divisions Grid (Corporate Architectural Layout) --- */
+.divisions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem; /* Spacious breathing room for designed cards */
+    margin-top: 4rem;
+}
+
+/* --- Service Cards (Premium Executive Design) --- */
 .service-card {
     background: var(--color-white);
     border: 1px solid var(--color-gray-100);
-    padding: 3.5rem;
-    transition: var(--transition-base);
+    padding: 4rem 3.5rem;
+    transition: all 0.5s var(--ease-out-expo);
     height: 100%;
     position: relative;
     overflow: hidden;
-}
-
-.service-card::after {
-    transition: all 0.4s var(--ease-out-expo);
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow: hidden;
+    z-index: 1;
 }
 
 .service-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 4px; height: 0;
-    background: var(--color-accent);
-    transition: all 0.4s var(--ease-out-expo);
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--color-gray-50);
+    z-index: -1;
+    transition: width 0.5s var(--ease-out-expo);
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
 }
 
 .service-card:hover::before {
-    height: 100%;
+    width: 100%;
+}
+
+/* Accent underline that expands on hover */
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    background: var(--color-accent);
+    transition: width 0.5s var(--ease-out-expo);
+}
+
+.service-card:hover::after {
+    width: 100%;
 }
 
 .service-icon {
-    width: 60px;
-    height: 60px;
-    background: var(--color-gray-50);
-    color: var(--color-accent);
+    width: 70px;
+    height: 70px;
+    background: var(--color-primary);
+    color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.8rem;
-    margin-bottom: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0; /* Tight grid like Reference */
-    border: 1px solid var(--color-gray-100);
+    margin-bottom: 2.5rem;
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.service-card:hover .service-icon {
+    background: var(--color-accent);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.service-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-gray-500);
+    flex-grow: 1;
 }
 
 /* --- CTA Banner --- */
@@ -487,15 +536,11 @@ body:not(.home-page) .site-header .nav-link {
 
 .cta-banner h2 { color: var(--color-white); font-size: 4rem; }
 
-/* --- 360 Flip Animation & Premium Hover --- */
-.card-360 {
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform-style: preserve-3d;
-}
-.card-360:hover {
-    transform: rotateY(360deg) scale(1.05);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    z-index: 10;
+/* --- Stats Grid --- */
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
 }
 
 /* --- Mobile & Tablet --- */
