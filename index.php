@@ -166,12 +166,12 @@ setInterval(morph, 4000);
                 </p>
                 <div style="margin-top: 4rem;">
                     <div style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 2rem; color: var(--color-accent);">Our Values (ALIGN)</div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem;">
                         <?php foreach ($BRAND_VALUES as $v): ?>
-                        <div class="service-card animate-on-scroll" style="padding: 3rem 2rem; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; min-height: 250px;">
-                            <div style="font-size: 3rem; font-weight: 900; color: var(--color-accent); opacity: 0.2; line-height: 1; margin-bottom: 1.5rem;"><?php echo $v['letter']; ?></div>
-                            <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem; text-transform: uppercase;"><?php echo $v['title']; ?></h3>
-                            <p style="font-size: 0.8rem; color: var(--color-gray-500); line-height: 1.6; margin-top: auto;"><?php echo $v['tagline']; ?></p>
+                        <div class="service-card animate-on-scroll" style="padding: 2rem 1rem; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; min-height: 200px;">
+                            <div style="font-size: 2rem; font-weight: 900; color: var(--color-accent); opacity: 0.2; line-height: 1; margin-bottom: 1rem;"><?php echo $v['letter']; ?></div>
+                            <h3 style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;"><?php echo $v['title']; ?></h3>
+                            <p style="font-size: 0.7rem; color: var(--color-gray-500); line-height: 1.4; margin-top: auto;"><?php echo $v['tagline']; ?></p>
                         </div>
                         <?php endforeach; ?>
                     </div>
