@@ -164,18 +164,7 @@ setInterval(morph, 4000);
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-gray-600); margin-bottom: 2.5rem;">
                     <?php echo nl2br(BRAND_ABOUT_INTRO); ?>
                 </p>
-                <div style="margin-top: 4rem;">
-                    <div style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 2rem; color: var(--color-accent);">Our Values (ALIGN)</div>
-                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem;">
-                        <?php foreach ($BRAND_VALUES as $v): ?>
-                        <div class="service-card animate-on-scroll" style="padding: 2rem 1rem; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; min-height: 200px;">
-                            <div style="font-size: 2rem; font-weight: 900; color: var(--color-accent); opacity: 0.2; line-height: 1; margin-bottom: 1rem;"><?php echo $v['letter']; ?></div>
-                            <h3 style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;"><?php echo $v['title']; ?></h3>
-                            <p style="font-size: 0.7rem; color: var(--color-gray-500); line-height: 1.4; margin-top: auto;"><?php echo $v['tagline']; ?></p>
-                        </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
+
             </div>
             <div class="animate-on-scroll" style="position: relative;">
                 <div style="width: 100%; height: 450px; background-color: var(--color-primary); position: relative; overflow: hidden; border: 10px solid var(--color-white); box-shadow: var(--shadow-lg);">
@@ -191,6 +180,19 @@ setInterval(morph, 4000);
                     <div style="font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1.5rem;">Our Promise</div>
                     <div style="font-size: 1.25rem; font-weight: 600; line-height: 1.5;">Access fairly.<br>Build skills.<br>Deliver impact.<br>Grow responsibly.</div>
                 </div>
+            </div>
+        </div>
+        <!-- ALIGN Section (Full Width) -->
+        <div style="margin-top: 5rem;">
+            <div style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 2rem; color: var(--color-accent);">Our Values (ALIGN)</div>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem;">
+                <?php foreach ($BRAND_VALUES as $v): ?>
+                <div class="service-card animate-on-scroll" style="padding: 2.5rem 1.5rem; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; min-height: 220px;">
+                    <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent); opacity: 0.2; line-height: 1; margin-bottom: 1rem;"><?php echo $v['letter']; ?></div>
+                    <h3 style="font-size: 0.95rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;"><?php echo $v['title']; ?></h3>
+                    <p style="font-size: 0.8rem; color: var(--color-gray-500); line-height: 1.5; margin-top: auto;"><?php echo $v['tagline']; ?></p>
+                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
