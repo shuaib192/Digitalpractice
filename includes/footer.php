@@ -26,7 +26,7 @@
             <div class="footer-links">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="<?php echo SITE_URL; ?>/company">About Us</a></li>
+                    <li><a href="<?php echo SITE_URL; ?>/about">About Us</a></li>
                     <li><a href="<?php echo SITE_URL; ?>/services">Our Solutions</a></li>
                     <li><a href="<?php echo SITE_URL; ?>/case-studies">Case Studies</a></li>
                     <li><a href="<?php echo SITE_URL; ?>/insights">Insights & Blog</a></li>

@@ -60,7 +60,7 @@ if (isset($pdo)) {
         <nav class="nav-menu">
             <!-- Company Mega-Menu -->
             <div class="dropdown-container">
-                <a href="<?php echo SITE_URL; ?>/company" class="nav-link">Company <i class="fas fa-chevron-down" style="font-size:0.75rem;margin-left:4px;"></i></a>
+                <a href="<?php echo SITE_URL; ?>/about" class="nav-link">Company <i class="fas fa-chevron-down" style="font-size:0.75rem;margin-left:4px;"></i></a>
                 <div class="mega-dropdown">
                     <ul class="mega-list">
                         <li><a href="<?php echo SITE_URL; ?>/about">About Us</a></li>

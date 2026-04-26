@@ -214,8 +214,8 @@ a {
     padding: 0;
 }
 
-/* Logo */
-.logo {
+/* Logo (scoped to header) */
+.site-header .logo {
     display: flex;
     align-items: center;
     padding: 0 2rem;
@@ -224,10 +224,16 @@ a {
     z-index: 10;
 }
 
-.logo img {
+.site-header .logo img {
     height: 42px;
     width: auto;
     filter: brightness(0) invert(1);
+}
+
+/* Generic logo reset for non-header contexts */
+.logo {
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Desktop Nav */
@@ -639,12 +645,12 @@ a {
         padding: 0 !important;
     }
 
-    .logo {
+    .site-header .logo {
         padding: 0 1.2rem;
         flex-grow: 1;
     }
 
-    .logo img {
+    .site-header .logo img {
         height: 36px;
         filter: brightness(0) invert(1) !important;
     }
@@ -845,11 +851,15 @@ a {
     margin-bottom: 2rem;
     display: inline-flex;
     align-items: center;
+    background: transparent !important;
+    padding: 0 !important;
+    height: auto !important;
 }
 
 .footer-brand .logo img {
     height: 50px;
     width: auto;
+    filter: brightness(0) invert(1) !important;
 }
 
 .footer-brand .brand-desc {
