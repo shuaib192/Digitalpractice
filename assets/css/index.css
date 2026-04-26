@@ -658,24 +658,16 @@ body:not(.home-page) .site-header .nav-link {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Mobile header: solid dark, NO split gradient */
+    /* Mobile header: consistently white for professional contrast */
     .site-header,
     body:not(.home-page) .site-header {
-        background: var(--color-primary) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .site-header.scrolled {
         background: var(--color-white) !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid var(--color-gray-100);
     }
 
-    /* Logo: white on dark header, original on scrolled */
+    /* Logo: original colors on mobile white background */
     .site-header .logo img {
-        filter: brightness(0) invert(1);
-    }
-
-    .site-header.scrolled .logo img {
+        height: 48px;
         filter: none !important;
     }
 
