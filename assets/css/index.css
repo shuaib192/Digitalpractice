@@ -182,7 +182,9 @@ a {
     color: var(--color-white);
 }
 
-/* Header (Unified Rebuild) */
+/* =============================================
+   HEADER — COMPLETE REBUILD (Clean & Unified)
+   ============================================= */
 .site-header {
     position: fixed;
     top: 0;
@@ -192,88 +194,75 @@ a {
     z-index: 1000;
     display: flex;
     align-items: center;
-    transition: all 0.4s ease;
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-primary);
+    border-bottom: none;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Homepage specific: transparent until scroll */
-.home-page .site-header:not(.scrolled) {
-    background: transparent;
+/* Scrolled: subtle shadow */
+.site-header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Scrolled state & Subpages: Solid Professional White Header */
-.site-header.scrolled,
-body:not(.home-page) .site-header {
-    background: var(--color-white) !important;
-    border-bottom: 1px solid var(--color-gray-100);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
-    height: 85px;
-}
-
-/* Unified Coloring Logic */
-.site-header.scrolled .nav-link,
-body:not(.home-page) .site-header .nav-link {
-    color: var(--color-primary) !important;
-}
-
-/* Logo always white (on dark strip) */
-.site-header.scrolled .logo img,
-body:not(.home-page) .site-header .logo img {
-    filter: brightness(0) invert(1) !important;
-}
-
-/* Homepage hero: white text/logo before scroll */
-.home-page .site-header:not(.scrolled) .nav-link {
-    color: var(--color-white) !important;
-}
-
-/* Homepage hero: white logo always (dark bg strip handles it) */
-.home-page .site-header:not(.scrolled) .logo img {
-    filter: brightness(0) invert(1) !important;
-}
-
+/* Inner layout */
 .header-inner {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
 }
 
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
-    padding: 0 2.5rem;
-    position: relative;
-    z-index: 10;
+    padding: 0 2rem;
     flex-shrink: 0;
-    background: var(--color-primary);
+    height: 100%;
+    z-index: 10;
 }
 
 .logo img {
-    height: 44px;
+    height: 42px;
     width: auto;
-    transition: filter 0.3s ease;
     filter: brightness(0) invert(1);
 }
 
-/* --- Desktop Navigation --- */
+/* Desktop Nav */
 .nav-menu {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     gap: 0;
     height: 100%;
-    background: transparent;
-    /* NO background on nav — header gradient handles it */
     padding: 0 1rem;
 }
 
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0 1.2rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger toggle (hidden on desktop) */
 .menu-toggle {
     display: none;
-    background: transparent;
+    background: var(--color-accent);
     border: none;
     cursor: pointer;
     color: var(--color-white);
@@ -281,35 +270,23 @@ body:not(.home-page) .site-header .logo img {
     padding: 0 1.5rem;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
-.nav-link {
-    font-family: var(--font-heading);
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 0 1.4rem;
-    transition: all 0.3s ease;
+/* Header CTA wrapper */
+.header-cta {
     display: flex;
     align-items: center;
     height: 100%;
-    border-radius: 0;
-    white-space: nowrap;
-    position: relative;
 }
 
-.nav-link:hover {
-    background-color: var(--color-accent);
-    color: var(--color-white) !important;
-}
-
-/* --- Mega Menu Dropdown --- */
+/* =============================================
+   DROPDOWN / MEGA MENU
+   ============================================= */
 .dropdown-container {
     position: relative;
     display: flex;
-    align-items: stretch;
+    align-items: center;
     height: 100%;
 }
 
@@ -317,23 +294,20 @@ body:not(.home-page) .site-header .logo img {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 320px;
-    background-color: var(--color-white);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    min-width: 300px;
+    background: var(--color-white);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(5px);
+    transform: translateY(8px);
     transition: all 0.3s ease;
     z-index: 1100;
     border-top: 3px solid var(--color-accent);
 }
 
-.dropdown-container:hover {
-    background-color: var(--color-accent);
-}
-
-.dropdown-container:hover>.nav-link {
-    color: var(--color-white) !important;
+.dropdown-container:hover > .nav-link {
+    color: var(--color-white);
+    background: var(--color-accent);
 }
 
 .dropdown-container:hover .mega-dropdown {
@@ -344,7 +318,7 @@ body:not(.home-page) .site-header .logo img {
 
 .mega-list {
     list-style: none;
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
 }
 
 .mega-list li {
@@ -353,22 +327,21 @@ body:not(.home-page) .site-header .logo img {
 
 .dropdown-container .mega-list a {
     display: block;
-    padding: 0.9rem 2rem;
+    padding: 0.85rem 1.8rem;
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-gray-800) !important;
+    color: var(--color-gray-700) !important;
     text-transform: none;
     letter-spacing: normal;
-    background: transparent;
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
     border-left: 3px solid transparent;
 }
 
 .dropdown-container .mega-list a:hover {
-    background-color: var(--color-gray-50);
+    background: var(--color-gray-50);
     color: var(--color-accent) !important;
-    padding-left: 2.5rem;
+    padding-left: 2.2rem;
     border-left-color: var(--color-accent);
 }
 
@@ -648,66 +621,55 @@ body:not(.home-page) .site-header .logo img {
     gap: 3rem;
 }
 
-/* --- Mobile & Tablet --- */
+/* =============================================
+   MOBILE & TABLET (max-width: 1100px)
+   ============================================= */
 @media (max-width: 1100px) {
     .divisions-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Mobile header: white with dark logo strip */
-    .site-header,
-    body:not(.home-page) .site-header {
-        background: var(--color-white) !important;
-        border-bottom: 1px solid var(--color-gray-100);
-    }
-
-    /* Logo: white on dark brand strip */
-    .site-header .logo {
+    /* Mobile header: dark navy, always */
+    .site-header {
         background: var(--color-primary) !important;
-        padding: 0 1.5rem;
-    }
-
-    .site-header .logo img {
-        height: 40px;
-        filter: brightness(0) invert(1) !important;
+        height: 70px;
     }
 
     .header-inner {
-        padding: 0 0 0 1rem !important;
+        padding: 0 !important;
     }
 
     .logo {
+        padding: 0 1.2rem;
         flex-grow: 1;
     }
 
-    /* Hamburger button */
+    .logo img {
+        height: 36px;
+        filter: brightness(0) invert(1) !important;
+    }
+
+    /* Hamburger */
     .menu-toggle {
         display: flex !important;
-        width: 60px;
+        width: 65px;
         height: 100%;
-        background-color: var(--color-accent) !important;
+        background: var(--color-accent) !important;
         color: var(--color-white) !important;
         font-size: 1.4rem;
         border-radius: 0 !important;
         margin: 0 !important;
-        z-index: 10;
     }
 
-    .site-header.scrolled .menu-toggle {
-        background-color: var(--color-accent) !important;
-        color: var(--color-white) !important;
-    }
-
-    /* Mobile nav: hidden off-screen, slides in */
+    /* Mobile nav panel */
     .nav-menu {
         position: fixed;
-        top: var(--header-height);
+        top: 70px;
         right: -100%;
         width: 100%;
         height: auto;
-        min-height: 50vh;
-        max-height: calc(100vh - var(--header-height));
-        background-color: var(--color-white) !important;
+        max-height: calc(100vh - 70px);
+        background: var(--color-white) !important;
         flex-direction: column;
         align-items: stretch;
         padding: 0;
@@ -730,11 +692,15 @@ body:not(.home-page) .site-header .logo img {
     }
 
     .dropdown-container:hover {
-        background-color: transparent !important;
+        background: transparent !important;
+    }
+
+    .dropdown-container:hover > .nav-link {
+        background: transparent;
     }
 
     .nav-link {
-        padding: 1.1rem 2rem !important;
+        padding: 1rem 1.5rem !important;
         height: auto !important;
         border-bottom: 1px solid var(--color-gray-100);
         color: var(--color-primary) !important;
@@ -743,11 +709,11 @@ body:not(.home-page) .site-header .logo img {
     }
 
     .nav-link:hover {
-        background-color: var(--color-gray-50) !important;
+        background: var(--color-gray-50) !important;
         color: var(--color-accent) !important;
     }
 
-    /* Mobile dropdown: static, hidden until .open */
+    /* Mobile dropdown */
     .mega-dropdown {
         position: static;
         box-shadow: none;
@@ -771,8 +737,8 @@ body:not(.home-page) .site-header .logo img {
 
     .dropdown-container .mega-list a {
         color: var(--color-gray-600) !important;
-        padding: 0.9rem 1.5rem 0.9rem 2rem;
-        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem 0.8rem 2rem;
+        font-size: 0.85rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         border-left: none;
     }
@@ -783,13 +749,14 @@ body:not(.home-page) .site-header .logo img {
         padding-left: 2.5rem;
     }
 
+    /* Hero mobile */
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         line-height: 1.15;
     }
 
     .hero-subtitle {
-        font-size: 1.05rem;
+        font-size: 1rem;
         margin-bottom: 2rem;
     }
 

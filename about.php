@@ -129,10 +129,10 @@ include __DIR__ . '/includes/header.php';
         <h2 class="title-bold" style="font-size: 2.5rem; margin-bottom: 2rem;">Executive Team</h2>
         
         <!-- Personnel Search Interface -->
-        <div style="max-width: 500px; margin: 0 auto; position: relative;">
-            <form method="GET" action="about.php#team" style="display: flex; background: white; border: 1px solid var(--color-gray-100); padding: 5px;">
-                <input type="text" name="s" value="<?php echo sanitize($search); ?>" placeholder="Search personnel..." style="flex: 1; border: none; padding: 0.8rem 1.2rem; font-size: 0.9rem; outline: none; font-family: var(--font-body);">
-                <button type="submit" class="btn btn-primary" style="padding: 0 1.5rem; border: none; background: var(--color-primary);">SEARCH</button>
+        <div style="max-width: 500px; width: 100%; margin: 0 auto; position: relative; padding: 0 1rem; box-sizing: border-box;">
+            <form method="GET" action="about.php#team" style="display: flex; background: white; border: 1px solid var(--color-gray-100); padding: 5px; width: 100%; box-sizing: border-box;">
+                <input type="text" name="s" value="<?php echo sanitize($search); ?>" placeholder="Search personnel..." style="flex: 1; min-width: 0; border: none; padding: 0.8rem 1rem; font-size: 0.9rem; outline: none; font-family: var(--font-body);">
+                <button type="submit" class="btn btn-primary" style="padding: 0 1.2rem; border: none; background: var(--color-primary); white-space: nowrap; flex-shrink: 0;">SEARCH</button>
             </form>
         </div>
     </div>
