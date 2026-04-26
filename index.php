@@ -32,8 +32,8 @@ include __DIR__ . '/includes/header.php';
             <span class="hero-morph-word" id="morph-term">PERFORMANCE</span>.
         </h1>
         <p class="hero-subtitle">
-            <strong>OUR MANDATE:</strong> Bridge the Gap. Equip for Impact.<br>
-            Resolving digital skilling, market access, and branding challenges through world-class services.
+            <strong>OUR MANDATE</strong><br>
+            Bridge the Gap. Equip for Impact.
         </p>
 
         <a href="<?php echo SITE_URL; ?>/services" class="learn-more-link cursor-trigger">
@@ -163,13 +163,13 @@ setInterval(morph, 4000);
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-gray-600); margin-bottom: 2.5rem;">
                     <?php echo nl2br(BRAND_ABOUT_INTRO); ?>
                 </p>
-                <div style="margin-top: 3rem;">
+                <div style="margin-top: 4rem;">
                     <div style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 2rem; color: var(--color-accent);">Our Values (ALIGN)</div>
                     <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
                         <?php foreach ($BRAND_VALUES as $v): ?>
-                        <div style="padding: 1.5rem; background: var(--color-white); border: 1px solid var(--color-gray-100); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 120px;">
-                            <div style="font-size: 1.5rem; font-weight: 900; color: var(--color-primary); line-height: 1;"><?php echo $v['letter']; ?></div>
-                            <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-top: 0.5rem; color: var(--color-gray-500);"><?php echo $v['title']; ?></div>
+                        <div class="service-card animate-on-scroll" style="padding: 2.5rem 1.5rem; text-align: center; justify-content: center; min-height: 180px;">
+                            <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent); line-height: 1; margin-bottom: 1rem;"><?php echo $v['letter']; ?></div>
+                            <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--color-primary); letter-spacing: 1px;"><?php echo $v['title']; ?></div>
                         </div>
                         <?php endforeach; ?>
                     </div>

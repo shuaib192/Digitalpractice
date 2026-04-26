@@ -77,11 +77,11 @@ include __DIR__ . '/includes/header.php';
                 </div>
             </div>
             
-            <div class="animate-on-scroll" style="position: relative; height: 100%;">
-                <div style="background-color: var(--color-gray-100); height: 100%; min-height: 500px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                    <!-- Official CEO Portrait -->
-                    <img src="<?php echo SITE_URL; ?>/assets/images/team/ceo.png" alt="Digital Practice Vision" style="position: absolute; width: 100%; height: 100%; object-fit: cover;">
-                    <div style="position: absolute; inset: 0; background: rgba(15, 23, 42, 0.2);"></div>
+            <div class="animate-on-scroll" style="position: relative;">
+                <div style="background-color: var(--color-gray-50); height: 100%; min-height: 500px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 1px solid var(--color-gray-100);">
+                    <!-- Official CEO Portrait - Adjusted for Professional Visibility -->
+                    <img src="<?php echo SITE_URL; ?>/assets/images/team/ceo.png" alt="Digital Practice Vision" style="max-width: 90%; max-height: 90%; object-fit: contain; filter: grayscale(20%);">
+                    <div style="position: absolute; inset: 0; background: rgba(15, 23, 42, 0.03);"></div>
                 </div>
                 <!-- Accent Block (Sharp) -->
                 <div style="position: absolute; bottom: 0; left: -2rem; background: var(--color-accent); color: white; padding: 2.5rem; max-width: 400px; z-index: 5;">
