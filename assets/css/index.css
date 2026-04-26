@@ -840,6 +840,31 @@ body:not(.home-page) .site-header .nav-link {
     grid-template-columns: repeat(4, 1fr);
 }
 
+.responsive-align-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .responsive-align-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .responsive-align-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-align-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- Custom Footer CSS --- */
 .site-footer {
     background-color: var(--color-primary);

@@ -185,7 +185,7 @@ setInterval(morph, 4000);
         <!-- ALIGN Section (Full Width) -->
         <div style="margin-top: 5rem;">
             <div style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 2rem; color: var(--color-accent);">Our Values (ALIGN)</div>
-            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem;">
+            <div class="responsive-align-grid">
                 <?php foreach ($BRAND_VALUES as $v): ?>
                 <div class="service-card animate-on-scroll" style="padding: 2.5rem 1.5rem; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; min-height: 220px;">
                     <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent); opacity: 0.2; line-height: 1; margin-bottom: 1rem;"><?php echo $v['letter']; ?></div>
