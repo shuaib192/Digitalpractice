@@ -3,7 +3,7 @@
    Inspired by Heirs Technologies (Sophisticated, Modern, Bold)
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
 :root {
     /* Precision Palette */
@@ -26,7 +26,7 @@
 
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
 
     /* Spacing & Borders */
     --space-xs: 0.5rem;

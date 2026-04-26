@@ -53,9 +53,22 @@ include __DIR__ . '/includes/header.php';
                 <span class="section-label" style="margin-bottom: 1rem; color: var(--color-accent); font-weight: 700; letter-spacing: 2px;">OUR MANDATE</span>
                 <h2 class="title-bold" style="font-size: 2.7rem; color: var(--color-primary); margin-bottom: 2rem;">Bridge the Gap. <br>Equip for Impact.</h2>
                 <div style="font-size: 1.1rem; line-height: 1.9; color: var(--color-gray-600); display: flex; flex-direction: column; gap: 1.5rem;">
+                    <p><strong>Digital Practice</strong><br><?php echo nl2br(BRAND_ABOUT_INTRO); ?></p>
                     <p><?php echo nl2br(BRAND_ABOUT_FULL); ?></p>
                 </div>
                 
+                <div style="margin-top: 3rem; background: var(--color-gray-50); padding: 2.5rem; border-left: 4px solid var(--color-accent);">
+                    <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">Our Strategic Objects</h3>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+                        <?php foreach ($BRAND_OBJECTS as $object): ?>
+                        <li style="display: flex; gap: 12px; font-size: 0.95rem; color: var(--color-gray-600);">
+                            <i class="fas fa-check-circle" style="color: var(--color-accent); margin-top: 5px;"></i>
+                            <span><?php echo $object; ?></span>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
                 <div style="margin-top: 3rem; display: flex; gap: 3rem; border-top: 1px solid var(--color-gray-200); padding-top: 2rem;">
                     <div>
                         <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent);">MISSION</div>

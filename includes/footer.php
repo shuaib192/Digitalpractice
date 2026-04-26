@@ -37,10 +37,16 @@
             <div class="footer-links">
                 <h4>Expertise</h4>
                 <ul>
-                    <li><a href="<?php echo SITE_URL; ?>/services/digital-product-development">Product Engineering</a></li>
-                    <li><a href="<?php echo SITE_URL; ?>/services/ai-data-solutions">Data & AI</a></li>
-                    <li><a href="<?php echo SITE_URL; ?>/services/cloud-solutions">Enterprise Cloud</a></li>
-                    <li><a href="<?php echo SITE_URL; ?>/services/cybersecurity">Cybersecurity</a></li>
+                    <?php 
+                    $count = 0;
+                    foreach ($BRAND_SERVICES as $bs): 
+                        if ($count >= 4) break;
+                    ?>
+                        <li><a href="<?php echo SITE_URL; ?>/service-details.php?id=<?php echo $bs['id']; ?>"><?php echo $bs['title']; ?></a></li>
+                    <?php 
+                        $count++;
+                    endforeach; 
+                    ?>
                 </ul>
             </div>
 

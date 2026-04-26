@@ -27,12 +27,11 @@ include __DIR__ . '/includes/header.php';
     </div>
     
     <div class="container hero-content">
-        <h1 class="hero-title">
-            Turning Digital<br>Potential into<br>
-            <span class="hero-morph-word" id="morph-term">PERFORMANCE</span>.
+        <h1 class="hero-title" style="font-size: clamp(3rem, 8vw, 6rem); letter-spacing: -2px;">
+            “Digital”<br>“Practice”
         </h1>
         <p class="hero-subtitle">
-            Resolving digital skilling, market access, and branding challenges through world-class, industry-standard services.
+            Resolving all forms of Digital Skilling, market access, and branding-related challenges by offering world-class, industry-standard services through hands-on training, service delivery, and client-focused solutions.
         </p>
 
         <a href="<?php echo SITE_URL; ?>/services" class="learn-more-link cursor-trigger">
@@ -160,9 +159,19 @@ setInterval(morph, 4000);
                 <span class="section-label">Our Philosophy</span>
                 <h2 class="title-bold" style="margin-bottom: 2rem; font-size: 3.2rem;">Impact Over <br>Activity.</h2>
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-gray-600); margin-bottom: 2.5rem;">
-                    <?php echo BRAND_ABOUT_FULL; ?>
+                    <?php echo nl2br(BRAND_ABOUT_INTRO); ?>
                 </p>
-                <a href="<?php echo SITE_URL; ?>/about" class="btn btn-primary">Discover ALIGN Values</a>
+                <div style="margin-top: 2rem; padding: 2.5rem; background-color: var(--color-primary); color: white;">
+                    <div style="font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1rem; color: var(--color-accent);">Our Values (ALIGN)</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem;">
+                        <?php foreach ($BRAND_VALUES as $v): ?>
+                        <div>
+                            <div style="font-size: 1.2rem; font-weight: 800; color: var(--color-white);"><?php echo $v['letter']; ?>: <?php echo $v['title']; ?></div>
+                            <div style="font-size: 0.85rem; opacity: 0.7;"><?php echo $v['tagline']; ?></div>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             </div>
             <div class="animate-on-scroll" style="position: relative;">
                 <div style="width: 100%; height: 600px; background-color: var(--color-primary); position: relative; overflow: hidden;">
