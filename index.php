@@ -160,7 +160,7 @@ setInterval(morph, 4000);
         <div class="grid-2" style="gap: var(--space-lg);">
             <div class="animate-on-scroll">
                 <span class="section-label">Our Philosophy</span>
-                <h2 class="title-bold" style="margin-bottom: 2rem; font-size: 3.2rem;">Impact Over <br>Activity.</h2>
+                <h2 class="title-bold" style="margin-bottom: 2rem;">Impact Over <br>Activity.</h2>
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-gray-600); margin-bottom: 2.5rem;">
                     <?php echo nl2br(BRAND_ABOUT_INTRO); ?>
                 </p>
@@ -176,9 +176,9 @@ setInterval(morph, 4000);
                 </div>
                 
                 <!-- Info Square with NO Radius -->
-                <div style="position: absolute; top: 50%; left: -40px; transform: translateY(-50%); padding: 3rem; background-color: var(--color-accent); color: white; width: 300px; z-index: 10; box-shadow: var(--shadow-float);">
+                <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); padding: 2.5rem; background-color: var(--color-accent); color: white; max-width: 300px; width: 80%; z-index: 10; box-shadow: var(--shadow-float);">
                     <div style="font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1.5rem;">Our Promise</div>
-                    <div style="font-size: 1.25rem; font-weight: 600; line-height: 1.5;">Access fairly.<br>Build skills.<br>Deliver impact.<br>Grow responsibly.</div>
+                    <div style="font-size: 1.15rem; font-weight: 600; line-height: 1.5;">Access fairly.<br>Build skills.<br>Deliver impact.<br>Grow responsibly.</div>
                 </div>
             </div>
         </div>
@@ -246,7 +246,7 @@ setInterval(morph, 4000);
 <section class="section" style="border-top: 1px solid var(--color-gray-100);">
     <div class="container animate-on-scroll text-center" style="max-width: 800px;">
         <span class="section-label">Strategic Partnership</span>
-        <h2 class="title-bold" style="margin-bottom: 3rem; font-size: 3.5rem;">Ready to build the digital future?</h2>
+        <h2 class="title-bold" style="margin-bottom: 3rem;">Ready to build the digital future?</h2>
         <a href="<?php echo SITE_URL; ?>/contact" class="btn btn-primary btn-lg">Partner With Us</a>
     </div>
 </section>

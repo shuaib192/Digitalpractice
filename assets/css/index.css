@@ -60,6 +60,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -518,7 +519,7 @@ a {
 /* --- Divisions Grid (Corporate Architectural Layout) --- */
 .divisions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     /* Spacious breathing room for designed cards */
     margin-top: 4rem;
