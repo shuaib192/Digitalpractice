@@ -27,15 +27,17 @@ include __DIR__ . '/includes/header.php';
     </div>
     
     <div class="container hero-content">
-        <h1 class="hero-title" style="font-size: clamp(3rem, 8vw, 6rem); letter-spacing: -2px;">
-            “Digital”<br>“Practice”
+        <h1 class="hero-title">
+            Turning Digital<br>Potential into<br>
+            <span class="hero-morph-word" id="morph-term">PERFORMANCE</span>.
         </h1>
         <p class="hero-subtitle">
-            Resolving all forms of Digital Skilling, market access, and branding-related challenges by offering world-class, industry-standard services through hands-on training, service delivery, and client-focused solutions.
+            <strong>OUR MANDATE:</strong> Bridge the Gap. Equip for Impact.<br>
+            Resolving digital skilling, market access, and branding challenges through world-class services.
         </p>
 
         <a href="<?php echo SITE_URL; ?>/services" class="learn-more-link cursor-trigger">
-            Learn More 
+            Explore Capabilities 
             <div class="arrow-circle">
                 <i class="fas fa-arrow-right"></i>
             </div>
@@ -161,25 +163,25 @@ setInterval(morph, 4000);
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--color-gray-600); margin-bottom: 2.5rem;">
                     <?php echo nl2br(BRAND_ABOUT_INTRO); ?>
                 </p>
-                <div style="margin-top: 2rem; padding: 2.5rem; background-color: var(--color-primary); color: white;">
-                    <div style="font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1rem; color: var(--color-accent);">Our Values (ALIGN)</div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem;">
+                <div style="margin-top: 3rem;">
+                    <div style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 2rem; color: var(--color-accent);">Our Values (ALIGN)</div>
+                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
                         <?php foreach ($BRAND_VALUES as $v): ?>
-                        <div>
-                            <div style="font-size: 1.2rem; font-weight: 800; color: var(--color-white);"><?php echo $v['letter']; ?>: <?php echo $v['title']; ?></div>
-                            <div style="font-size: 0.85rem; opacity: 0.7;"><?php echo $v['tagline']; ?></div>
+                        <div style="padding: 1.5rem; background: var(--color-white); border: 1px solid var(--color-gray-100); text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 120px;">
+                            <div style="font-size: 1.5rem; font-weight: 900; color: var(--color-primary); line-height: 1;"><?php echo $v['letter']; ?></div>
+                            <div style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-top: 0.5rem; color: var(--color-gray-500);"><?php echo $v['title']; ?></div>
                         </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
             </div>
             <div class="animate-on-scroll" style="position: relative;">
-                <div style="width: 100%; height: 600px; background-color: var(--color-primary); position: relative; overflow: hidden;">
+                <div style="width: 100%; height: 450px; background-color: var(--color-primary); position: relative; overflow: hidden; border: 10px solid var(--color-white); box-shadow: var(--shadow-lg);">
                     <!-- Highlight Image -->
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" 
-                         alt="Team Collaboration" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
+                         alt="Team Collaboration" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
                     
-                    <div style="position: absolute; inset: 0; background: rgba(15, 23, 42, 0.4);"></div>
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.6));"></div>
                 </div>
                 
                 <!-- Info Square with NO Radius -->
