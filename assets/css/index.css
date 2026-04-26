@@ -182,7 +182,7 @@ a {
     color: var(--color-white);
 }
 
-/* --- Header (Clean Professional Rebuild) --- */
+/* Header (Unified Rebuild) */
 .site-header {
     position: fixed;
     top: 0;
@@ -191,52 +191,44 @@ a {
     height: var(--header-height);
     z-index: 1000;
     display: flex;
-    align-items: stretch;
-    transition: all 0.5s var(--ease-out-expo);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    align-items: center;
+    transition: all 0.4s ease;
     background: transparent;
-    padding: 0;
-    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Homepage hero: transparent header */
-.home-page .site-header {
+/* Homepage specific: transparent until scroll */
+.home-page .site-header:not(.scrolled) {
     background: transparent;
 }
 
-/* Scrolled state: split background — brand color left, white right */
-.site-header.scrolled {
-    background: linear-gradient(to right, var(--color-accent) 280px, var(--color-white) 280px) !important;
-    height: 80px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid var(--color-gray-100);
-}
-
-/* Subpages: always show split background */
+/* Scrolled state & Subpages: Solid Professional White Header */
+.site-header.scrolled,
 body:not(.home-page) .site-header {
-    background: linear-gradient(to right, var(--color-accent) 280px, var(--color-white) 280px);
+    background: var(--color-white) !important;
     border-bottom: 1px solid var(--color-gray-100);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    height: 85px;
 }
 
-/* Logo always white on split backgrounds */
-.site-header.scrolled .logo img,
-body:not(.home-page) .site-header .logo img {
-    filter: brightness(0) invert(1);
-}
-
-/* Nav links turn dark on white background */
+/* Unified Coloring Logic */
 .site-header.scrolled .nav-link,
 body:not(.home-page) .site-header .nav-link {
-    color: var(--color-primary);
+    color: var(--color-primary) !important;
 }
 
-/* Homepage hero: logo & links white */
-.home-page .site-header:not(.scrolled) .logo img {
-    filter: brightness(0) invert(1);
+.site-header.scrolled .logo img,
+body:not(.home-page) .site-header .logo img {
+    filter: none !important;
 }
 
+/* Homepage hero: white text/logo before scroll */
 .home-page .site-header:not(.scrolled) .nav-link {
-    color: var(--color-white);
+    color: var(--color-white) !important;
+}
+
+.home-page .site-header:not(.scrolled) .logo img {
+    filter: brightness(0) invert(1) !important;
 }
 
 .header-inner {
