@@ -33,7 +33,8 @@ include __DIR__ . '/includes/header.php';
         </h1>
         <p class="hero-subtitle">
             <strong>OUR MANDATE</strong><br>
-            Bridge the Gap. Equip for Impact.
+            Bridge the Gap between potential and performance. <br>
+            Equip individuals and enterprises for measurable impact.
         </p>
 
         <a href="<?php echo SITE_URL; ?>/services" class="learn-more-link cursor-trigger">
