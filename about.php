@@ -57,36 +57,38 @@ include __DIR__ . '/includes/header.php';
                     <p><?php echo nl2br(BRAND_ABOUT_FULL); ?></p>
                 </div>
                 
-                <div style="margin-top: 3rem; background: var(--color-gray-50); padding: 2.5rem; border-left: 4px solid var(--color-accent);">
-                    <h3 style="font-size: 1.2rem; color: var(--color-primary); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">Our Strategic Objects</h3>
-                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
+            </div>
+            
+            <div class="animate-on-scroll">
+                <div style="background-color: var(--color-gray-100); height: 500px; margin-bottom: 2rem; position: relative; overflow: hidden; border-radius: var(--radius-sm);">
+                    <!-- Official CEO Portrait -->
+                    <img src="<?php echo SITE_URL; ?>/assets/images/team/ceo.png" alt="Digital Practice Vision" style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: grayscale(10%);">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.3));"></div>
+                </div>
+
+                <!-- Vision (Static now to allow content below) -->
+                <div style="background: var(--color-accent); color: white; padding: 2.5rem; margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Our Vision</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6;"><?php echo BRAND_VISION; ?></p>
+                </div>
+
+                <!-- Strategic Objects (Moved here to fill space) -->
+                <div style="background: var(--color-gray-50); padding: 2.5rem; border-left: 4px solid var(--color-accent); margin-bottom: 2rem;">
+                    <h3 style="font-size: 1.1rem; color: var(--color-primary); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">Strategic Objects</h3>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem;">
                         <?php foreach ($BRAND_OBJECTS as $object): ?>
-                        <li style="display: flex; gap: 12px; font-size: 0.95rem; color: var(--color-gray-600);">
-                            <i class="fas fa-check-circle" style="color: var(--color-accent); margin-top: 5px;"></i>
+                        <li style="display: flex; gap: 12px; font-size: 0.9rem; color: var(--color-gray-600);">
+                            <i class="fas fa-check-circle" style="color: var(--color-accent); margin-top: 4px;"></i>
                             <span><?php echo $object; ?></span>
                         </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
 
-                <div style="margin-top: 3rem; display: flex; gap: 3rem; border-top: 1px solid var(--color-gray-200); padding-top: 2rem;">
-                    <div>
-                        <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent);">MISSION</div>
-                        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-gray-600); max-width: 400px;"><?php echo BRAND_MISSION; ?></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="animate-on-scroll" style="position: relative;">
-                <div style="background-color: var(--color-gray-100); height: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border-radius: var(--radius-sm);">
-                    <!-- Official CEO Portrait - Adjusted for Professional Framing -->
-                    <img src="<?php echo SITE_URL; ?>/assets/images/team/ceo.png" alt="Digital Practice Vision" style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: grayscale(15%);">
-                    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.4));"></div>
-                </div>
-                <!-- Accent Block (Sharp) -->
-                <div style="position: absolute; bottom: 0; left: -2rem; background: var(--color-accent); color: white; padding: 2.5rem; max-width: 400px; z-index: 5;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Our Vision</h3>
-                    <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6;"><?php echo BRAND_VISION; ?></p>
+                <!-- Mission (Moved here to fill space) -->
+                <div style="border-top: 1px solid var(--color-gray-200); padding-top: 2rem;">
+                    <div style="font-size: 2.2rem; font-weight: 900; color: var(--color-accent); margin-bottom: 0.5rem;">MISSION</div>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-gray-600);"><?php echo BRAND_MISSION; ?></p>
                 </div>
             </div>
         </div>
