@@ -165,11 +165,12 @@ setInterval(morph, 4000);
                 </p>
                 <div style="margin-top: 4rem;">
                     <div style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 2rem; color: var(--color-accent);">Our Values (ALIGN)</div>
-                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
                         <?php foreach ($BRAND_VALUES as $v): ?>
-                        <div class="service-card animate-on-scroll" style="padding: 2.5rem 1.5rem; text-align: center; justify-content: center; min-height: 180px;">
-                            <div style="font-size: 2.5rem; font-weight: 900; color: var(--color-accent); line-height: 1; margin-bottom: 1rem;"><?php echo $v['letter']; ?></div>
-                            <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: var(--color-primary); letter-spacing: 1px;"><?php echo $v['title']; ?></div>
+                        <div class="service-card animate-on-scroll" style="padding: 3rem 2rem; text-align: left; display: flex; flex-direction: column; justify-content: flex-start; min-height: 250px;">
+                            <div style="font-size: 3rem; font-weight: 900; color: var(--color-accent); opacity: 0.2; line-height: 1; margin-bottom: 1.5rem;"><?php echo $v['letter']; ?></div>
+                            <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem; text-transform: uppercase;"><?php echo $v['title']; ?></h3>
+                            <p style="font-size: 0.8rem; color: var(--color-gray-500); line-height: 1.6; margin-top: auto;"><?php echo $v['tagline']; ?></p>
                         </div>
                         <?php endforeach; ?>
                     </div>
@@ -185,9 +186,9 @@ setInterval(morph, 4000);
                 </div>
                 
                 <!-- Info Square with NO Radius -->
-                <div style="position: absolute; bottom: -30px; left: -30px; padding: 2.5rem; background-color: var(--color-accent); color: white; width: 280px;">
-                    <div style="font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1rem;">Our Promise</div>
-                    <div style="font-size: 1.1rem; font-weight: 500; line-height: 1.4;">Access fairly. Build skills. Deliver impact. Grow responsibly.</div>
+                <div style="position: absolute; top: 50%; left: -40px; transform: translateY(-50%); padding: 3rem; background-color: var(--color-accent); color: white; width: 300px; z-index: 10; box-shadow: var(--shadow-float);">
+                    <div style="font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1.5rem;">Our Promise</div>
+                    <div style="font-size: 1.25rem; font-weight: 600; line-height: 1.5;">Access fairly.<br>Build skills.<br>Deliver impact.<br>Grow responsibly.</div>
                 </div>
             </div>
         </div>
